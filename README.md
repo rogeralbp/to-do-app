@@ -1,6 +1,6 @@
-# [Webpack Project Template](https://rogeralbp.github.io/webpack-starter/)
+# ToDo Application
 
-This project it's Standar WebPack Configuration for JavaScript Projects that allow to skip The fundamentals configuration, to summarize is just neccesary to clone this projecto when ever a web project it will be developed.
+To Do app developed using a webpack project besides to the basics of web development.(css, js, html)
 
 ## Fundamental Steps
 Once you clone this project you only need to navigate to the folder of this project and there execute the nexts steps by cmd or git bash or vs terminal
@@ -20,19 +20,3 @@ Finally -> If you want to run the application , test live changes , etc you have
 ```
 npm start
 ```
-
-### Advantages of [WebPack](https://webpack.js.org/guides/getting-started/)
-
-- Manage dependencies
-
-- Deploy temporary servers on the pc for testing, qa (improve code through trial and error)
-
-- Load modules, reuse code from others, reducing time and effort
-
-- Minimize code
-
-- Compile from TypeScript to JavaScript
-
-- It allows conditioning the web application by validating how to deploy the application depending on the characteristics of the environment (browser, computer, ecmascript version, etc)
-
-JI roger
