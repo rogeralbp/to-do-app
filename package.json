@@ -1,7 +1,7 @@
 {
-  "name": "webpack-inicial",
+  "name": "todo-application",
   "version": "1.0.0",
-  "description": "Base Frame of a WebPack Project",
+  "description": "ToDo aaplication",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Roger: keep learning until be a fullstack dev, your the best:)\" && exit 1",
