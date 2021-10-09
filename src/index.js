@@ -1,6 +1,7 @@
-import { talkTo } from './js/components';
+import { Todo } from './classes/todo.class';
+
 import './styles.css';
 
-const name = 'Roger Oporta';
+const task = new Todo('Learn JavaScript');
 
-talkTo(name);
+console.log( task );
