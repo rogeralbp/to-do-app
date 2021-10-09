@@ -1,16 +1,19 @@
 import './styles.css';
 
-import { Todo } from './classes';
-import { TodoList } from './classes';
+import { Todo, TodoList } from './classes';
+import { createTodoHtml } from './js/components';
 
 const todoList = new TodoList();
 
 const taskJS = new Todo('Learn JavaScript');
-const taskCSS = new Todo('Learn CSS');
-const taskHTML = new Todo('Learn HTML');
+//const taskCSS = new Todo('Learn CSS');
+//const taskHTML = new Todo('Learn HTML');
 
 todoList.newTodo(taskJS);
-todoList.newTodo(taskCSS);
-todoList.newTodo(taskHTML);
+//todoList.newTodo(taskCSS);
+//todoList.newTodo(taskHTML);
 
 console.log( todoList );
+
+createTodoHtml(taskJS);
+

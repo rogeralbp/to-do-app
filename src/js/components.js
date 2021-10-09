@@ -1,13 +1,24 @@
 
-import '../css/components.css'
+const divTodoList = document.querySelector('.todo-list');
 
-export const talkTo = ( name ) =>{
-    
-    console.log('Creating an h1-element from JS component');
 
-    const h1 = document.createElement('h1');
+export const createTodoHtml = ( todo ) =>{
 
-    h1.innerText = `Hello my g , ${name}`;
+    const htmlTodo = ` 
+    <li class=" ${ (todo.completed) ? 'completed' : '' } " data-id="${ todo.id }">
+    <div class="view">
+        <input class="toggle" type="checkbox" ${ (todo.completed) ? 'checked' : '' }>
+        <label> ${ todo.task } </label>
+        <button class="destroy"></button>
+    </div>
+    <input class="edit" value="Create a To-Do task">
+    </li>`
 
-    document.body.append(h1);
+    const div = document.createElement('div');
+    div.innerHTML = htmlTodo;
+
+    divTodoList.append( div.firstElementChild );
+
+    return div.firstElementChild;
+
 }
