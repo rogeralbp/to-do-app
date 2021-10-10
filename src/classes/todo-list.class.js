@@ -1,4 +1,6 @@
 
+
+
 export class TodoList {
 
     constructor(){
@@ -16,6 +18,17 @@ export class TodoList {
     }
 
     markCompleted ( id ){
+
+
+        for( const todo of this.todos){
+
+            if( todo.id == id ){
+
+                todo.completed = !todo.completed;
+                break;
+
+            }
+        }
 
     }
 
