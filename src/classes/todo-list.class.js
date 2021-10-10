@@ -8,13 +8,15 @@ export class TodoList {
         this.todos = [];
     }
 
-    newTodo(  todo ){
+    newTodo( todo ){
 
         this.todos.push( todo );
     }
 
     deleteTodo( id ){
         
+        this.todos = this.todos.filter( todo => todo.id != id );
+
     }
 
     markCompleted ( id ){
