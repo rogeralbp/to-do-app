@@ -1,6 +1,5 @@
 
 
-
 export class TodoList {
 
     constructor(){
@@ -36,6 +35,15 @@ export class TodoList {
 
     cleanCompleted(){
 
+        this.todos = this.todos.filter( todo => !todo.completed );
+    }
+
+
+    saveToLocalStorage(){
+
+    }
+
+    loadFromLocalStorage(){
         
     }
 

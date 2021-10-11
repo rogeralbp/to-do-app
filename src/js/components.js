@@ -1,8 +1,10 @@
+
 import { Todo } from "../classes";
 import { todoList } from "../index";
 
 const divTodoList = document.querySelector('.todo-list');
 const txtInputToDo = document.querySelector('.new-all');
+const btnClearCompleted = document.querySelector('.clear-completed');
 
 
 export const createTodoHtml = ( todo ) =>{
@@ -48,8 +50,6 @@ divTodoList.addEventListener('click', ( event ) => {
     const todoElement = event.target.parentElement.parentElement;
     const todoId      = todoElement.getAttribute('data-id');
 
-    //console.log( todoId );
-
     if( elementName.includes('input') ){
 
         todoList.markCompleted( todoId );
@@ -60,6 +60,23 @@ divTodoList.addEventListener('click', ( event ) => {
         todoList.deleteTodo( todoId );
         divTodoList.removeChild( todoElement );
 
+    }
+
+});
+
+btnClearCompleted.addEventListener('click', ( event ) => {
+
+    todoList.cleanCompleted();
+
+    for(let i= divTodoList.children.length - 1; i >= 0 ; i-- ){
+
+        const currentListElement = divTodoList.children[i];
+
+        if( currentListElement.classList.contains('completed') ){
+
+            divTodoList.removeChild( currentListElement );
+
+        }
     }
 
 });
