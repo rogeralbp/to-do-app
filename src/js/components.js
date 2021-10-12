@@ -2,9 +2,11 @@
 import { Todo } from "../classes";
 import { todoList } from "../index";
 
-const divTodoList = document.querySelector('.todo-list');
-const txtInputToDo = document.querySelector('.new-all');
+const divTodoList       = document.querySelector('.todo-list');
+const txtInputToDo      = document.querySelector('.new-all');
 const btnClearCompleted = document.querySelector('.clear-completed');
+
+const ulFilters         = document.querySelector('.filters');
 
 
 export const createTodoHtml = ( todo ) =>{
@@ -75,6 +77,36 @@ btnClearCompleted.addEventListener('click', ( event ) => {
         if( currentListElement.classList.contains('completed') ){
 
             divTodoList.removeChild( currentListElement );
+
+        }
+    }
+
+});
+
+ulFilters.addEventListener('click', ( click ) => {
+
+    const filter = event.target.text;
+
+    if( !filter ){ return; }
+
+    for( const element of divTodoList.children ){
+
+        element.classList.remove('hidden');
+        const completed = element.classList.contains('completed');
+
+        switch( filter ){
+
+            case 'Pending':
+                if ( completed ){
+                    element.classList.add('hidden');
+                }
+            break;
+
+            case 'Completed':
+                if ( !completed ){
+                    element.classList.add('hidden');
+                }
+            break;
 
         }
     }
