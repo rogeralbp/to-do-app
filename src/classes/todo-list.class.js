@@ -1,5 +1,6 @@
-import { Todo } from "./todo.class";
+//Class for the List of to-dos
 
+import { Todo } from "./todo.class";
 
 export class TodoList {
 

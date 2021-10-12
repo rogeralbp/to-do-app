@@ -2,6 +2,8 @@
 import { Todo } from "../classes";
 import { todoList } from "../index";
 
+// HTML references
+
 const divTodoList       = document.querySelector('.todo-list');
 const txtInputToDo      = document.querySelector('.new-all');
 const btnClearCompleted = document.querySelector('.clear-completed');
@@ -9,7 +11,14 @@ const btnClearCompleted = document.querySelector('.clear-completed');
 const ulFilters         = document.querySelector('.filters');
 const anchorFilters     = document.querySelectorAll('.filtro');
 
+// Functions
 
+/**
+ * 
+ * @param {*To-Do object to create } todo 
+ * @returns a chunk of HTML ready to incrust into the parent
+ * container of the To-Do's
+ */
 export const createTodoHtml = ( todo ) =>{
 
     const htmlTodo = ` 
@@ -31,6 +40,14 @@ export const createTodoHtml = ( todo ) =>{
 
 }
 
+
+// Events
+
+/**
+ * This Event is fired up after the enter key
+ * has been pressed activating the function to
+ * create a To-Do task and incrust it to the HTML
+ */
 txtInputToDo.addEventListener( 'keyup' , ( event ) => {
 
     if( event.keyCode === 13 && (txtInputToDo.value.length > 0) ){
@@ -47,6 +64,11 @@ txtInputToDo.addEventListener( 'keyup' , ( event ) => {
 
 });
 
+/**
+ * This event is fired up to delete a To-Do
+ * when a X button in the rigth side of
+ * the To-Do has been clicked
+ */
 divTodoList.addEventListener('click', ( event ) => {
 
     const elementName = event.target.localName;
@@ -67,6 +89,10 @@ divTodoList.addEventListener('click', ( event ) => {
 
 });
 
+/**
+ * This event is fired up to clean all the
+ * completed To-Do's
+ */
 btnClearCompleted.addEventListener('click', ( event ) => {
 
     todoList.cleanCompleted();
@@ -84,6 +110,10 @@ btnClearCompleted.addEventListener('click', ( event ) => {
 
 });
 
+/**
+ * This event is fired up to group the To-Do's
+ * by status
+ */
 ulFilters.addEventListener('click', ( click ) => {
 
     const filter = event.target.text;

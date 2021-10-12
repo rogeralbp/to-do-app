@@ -1,4 +1,4 @@
-
+//Class of the object To-Do
 
 export class Todo {
 
@@ -14,13 +14,20 @@ export class Todo {
 
     }
 
-    /*task = learn js, cleann the dog*/
+    /**
+     * 
+     * @param {*learn js, cleann the dog} task 
+     * @param {*8451516114} id 
+     * @param {*status of the task} completed 
+     * @param {*creation date of the task} created 
+     * 
+     */
     constructor( task ){
 
-        this.task = task;
-        this.id        = new Date().getTime(); //8451516114
-        this.completed = false;
-        this.created   = new Date(); // creation date of the tasks
+        this.task      = task;
+        this.id        = new Date().getTime(); 
+        this.completed = false; 
+        this.created   = new Date(); // 
     }
 
 }

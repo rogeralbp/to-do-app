@@ -1,10 +1,8 @@
 import './styles.css';
 
 import { Todo, TodoList } from './classes';
-import { createTodoHtml } from './js/components'; // first step to use the App
+import { createTodoHtml } from './js/components';
 
 export const todoList = new TodoList();
-
-console.log( todoList );
 
 todoList.todos.forEach( createTodoHtml );
