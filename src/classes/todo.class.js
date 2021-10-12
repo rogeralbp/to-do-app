@@ -2,17 +2,6 @@
 
 export class Todo {
 
-
-    static rebuildObjects( {id, task, completed, created} ) {
-
-        const templateToDo = new Todo( task );
-
-        this.id        = id; 
-        this.completed = completed;
-        this.created   = created; 
-
-    }
-
     /*task = learn js, cleann the dog*/
     constructor( task ){
 
