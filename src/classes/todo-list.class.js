@@ -5,7 +5,7 @@ export class TodoList {
     constructor(){
 
         this.loadFromLocalStorage();
-        
+
     }
 
     newTodo( todo ){
@@ -50,15 +50,10 @@ export class TodoList {
 
     loadFromLocalStorage(){
         
-        if ( localStorage.getItem('todo') ){
+        this.todos = ( localStorage.getItem('todo') ) 
+                        ? this.todos = JSON.parse(localStorage.getItem('todo')) 
+                        : this.todos = [];
 
-            this.todos = JSON.parse( localStorage.getItem('todo') );
-
-        } else {
-           
-            alert('There was a problem saving the To-do tasks,\na new list of tasks will be created');
-            this.todos = [];
-        }
     }
 
 }
